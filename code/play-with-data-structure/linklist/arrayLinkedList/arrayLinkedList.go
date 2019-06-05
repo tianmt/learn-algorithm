@@ -112,7 +112,7 @@ func listPrint(list *SqList) {
 	fmt.Println()
 }
 
-func errorHandle(code errCode) {
+func handleError(code errCode) {
 	fmt.Println(errCodeMsg[code])
 }
 
@@ -126,7 +126,7 @@ func main() {
 	fmt.Println("=====================[2.print append list]==================")
 	err := listAppend(sl, 5)
 	if err != OK {
-		errorHandle(err)
+		handleError(err)
 	} else {
 		fmt.Println("插入成功！")
 	}
@@ -136,7 +136,7 @@ func main() {
 	fmt.Println("=====================[3.print append list]==================")
 	err = listAppend(sl, 15)
 	if err != OK {
-		errorHandle(err)
+		handleError(err)
 	} else {
 		fmt.Println("插入成功！")
 	}
@@ -146,7 +146,7 @@ func main() {
 	fmt.Println("=====================[4.print append list]==================")
 	err = listAppend(sl, 25)
 	if err != OK {
-		errorHandle(err)
+		handleError(err)
 	} else {
 		fmt.Println("插入成功！")
 	}
@@ -156,7 +156,7 @@ func main() {
 	fmt.Println("=====================[5.print del list]=====================")
 	e, ok := listDelete(sl, 1)
 	if OK != ok {
-		errorHandle(ok)
+		handleError(ok)
 	} else {
 		fmt.Println("del:", e)
 		listPrint(sl)
@@ -166,7 +166,7 @@ func main() {
 	fmt.Println("=====================[6.print del list]=====================")
 	e, ok = listDelete(sl, 3)
 	if OK != ok {
-		errorHandle(ok)
+		handleError(ok)
 	} else {
 		fmt.Println("del:", e)
 	}
@@ -176,7 +176,7 @@ func main() {
 	fmt.Println("=====================[7.print insert list]==================")
 	ok = listInsert(sl, 1, 3)
 	if OK != ok {
-		errorHandle(ok)
+		handleError(ok)
 	} else {
 		fmt.Println("insert:", 3)
 	}
@@ -186,7 +186,7 @@ func main() {
 	fmt.Println("=====================[8.print insert list]==================")
 	ok = listInsert(sl, 1, 9)
 	if OK != ok {
-		errorHandle(ok)
+		handleError(ok)
 	} else {
 		fmt.Println("insert:", 9)
 	}
@@ -196,7 +196,7 @@ func main() {
 	fmt.Println("=====================[9.print insert list]==================")
 	ok = listInsert(sl, 9, 19)
 	if OK != ok {
-		errorHandle(ok)
+		handleError(ok)
 	} else {
 		fmt.Println("insert:", 19)
 	}
@@ -206,7 +206,7 @@ func main() {
 	fmt.Println("=====================[10.print get list]====================")
 	e, ok = getElem(sl, 3)
 	if OK != ok {
-		errorHandle(ok)
+		handleError(ok)
 	} else {
 		fmt.Println("get:", e)
 	}
@@ -215,7 +215,7 @@ func main() {
 	fmt.Println("=====================[11.print get list]====================")
 	e, ok = getElem(sl, 13)
 	if OK != ok {
-		errorHandle(ok)
+		handleError(ok)
 	} else {
 		fmt.Println("get:", e)
 	}
